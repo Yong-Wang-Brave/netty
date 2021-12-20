@@ -22,7 +22,7 @@ public class NettyClient {
                     .handler(new ChannelInitializer<SocketChannel>() {
                         @Override
                         protected void initChannel(SocketChannel channel) throws Exception {
-                            //加入处理器
+                            //加入处理器1
                             channel.pipeline().addLast(new NettyClientHandler());
                         }
                     });
