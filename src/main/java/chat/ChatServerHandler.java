@@ -93,10 +93,10 @@ public class ChatServerHandler extends SimpleChannelInboundHandler<String> {
 
         channelGroup.forEach(ch->{
             if(ch!=channel){
-ch.writeAndFlush("客户端"+ channel.remoteAddress()+"发送了消息5"+s+ "\n");
+ch.writeAndFlush("客户端"+ channel.remoteAddress()+"发送了消息5"+s+"_"+"\n");
             }else{
 
-                ch.writeAndFlush("自己"+ channel.remoteAddress()+"发送了消息6"+s+ "\n");
+                ch.writeAndFlush("自己"+ channel.remoteAddress()+"发送了消息6"+s+"_"+ "\n");
 
             }
 
