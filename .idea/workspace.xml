@@ -10,7 +10,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="762d6308-1a62-4f0e-afdc-2606e641f1c0" name="Default Changelist" comment="聊天小程序编写">
+    <list default="true" id="762d6308-1a62-4f0e-afdc-2606e641f1c0" name="Default Changelist" comment="黏包拆包的实现">
       <change afterPath="$PROJECT_DIR$/../RedisSecKill/.idea/.gitignore" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../RedisSecKill/.idea/compiler.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../RedisSecKill/.idea/encodings.xml" afterDir="false" />
@@ -28,7 +28,13 @@
       <change afterPath="$PROJECT_DIR$/../log4jBugDemo/src/main/java/com/example/demo/controller/TestLogController.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../log4jBugDemo/src/main/resources/log4j.properties" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../mvcdemo1/mvcdemo1.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/SendByMySelf/MyClient.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/SendByMySelf/MyClientHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/SendByMySelf/MyMessageDecoder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/SendByMySelf/MyMessageEncoder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/SendByMySelf/MyMessageProtocol.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/SendByMySelf/MyServer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/SendByMySelf/MyServerHandler.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../redisSecKillByWY/src/main/java/com/example/demo/Controller/jedisCom1.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../security-spring-security/security-spring-security.iml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../security-spring-security/src/main/java/com/pbteach/security/springboot/config/ApplicationConfig.java" afterDir="false" />
@@ -51,9 +57,7 @@
       <change afterPath="$PROJECT_DIR$/../springcloud-alibaba/springcloud-alibaba.iml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../testMybatis/testMybatis.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/chat/ChatClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/chat/ChatClient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/chat/ChatServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/chat/ChatServer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/chat/ChatServerHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/chat/ChatServerHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/chat/ChatClientHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/chat/ChatClientHandler.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -111,7 +115,7 @@
       <recent name="D:\original\netty1\src\main\java\chat" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.ChatClient">
+  <component name="RunManager" selected="Application.MyClient">
     <configuration name="ChatClient" type="Application" factoryName="Application" singleton="false" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="chat.ChatClient" />
       <module name="netty1" />
@@ -138,12 +142,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="NettyClient" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="netty01.NettyClient" />
+    <configuration name="MyClient" type="Application" factoryName="Application" singleton="false" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="SendByMySelf.MyClient" />
       <module name="netty1" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="netty01.*" />
+          <option name="PATTERN" value="SendByMySelf.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -151,8 +155,21 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="NettyServer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="netty01.NettyServer" />
+    <configuration name="MyServer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="SendByMySelf.MyServer" />
+      <module name="netty1" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="SendByMySelf.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="NettyClient" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="netty01.NettyClient" />
       <module name="netty1" />
       <extension name="coverage">
         <pattern>
@@ -168,14 +185,16 @@
       <item itemvalue="Application.ChatClient" />
       <item itemvalue="Application.ChatServer" />
       <item itemvalue="Application.NettyClient" />
-      <item itemvalue="Application.NettyServer" />
+      <item itemvalue="Application.MyServer" />
+      <item itemvalue="Application.MyClient" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.MyClient" />
+        <item itemvalue="Application.MyServer" />
+        <item itemvalue="Application.NettyClient" />
         <item itemvalue="Application.ChatClient" />
         <item itemvalue="Application.ChatServer" />
-        <item itemvalue="Application.NettyClient" />
-        <item itemvalue="Application.NettyServer" />
       </list>
     </recent_temporary>
   </component>
@@ -191,7 +210,7 @@
       <updated>1639376148269</updated>
       <workItem from="1639376151358" duration="6904000" />
       <workItem from="1639996100162" duration="16477000" />
-      <workItem from="1640654143574" duration="1735000" />
+      <workItem from="1640654143574" duration="10697000" />
     </task>
     <task id="LOCAL-00001" summary="提交">
       <created>1639378502395</created>
@@ -214,7 +233,21 @@
       <option name="project" value="LOCAL" />
       <updated>1640166954520</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="黏包拆包的实现">
+      <created>1640655982570</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1640655982570</updated>
+    </task>
+    <task id="LOCAL-00005" summary="黏包拆包的实现">
+      <created>1640656427824</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1640656427824</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -235,25 +268,26 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="提交" />
     <MESSAGE value="聊天小程序编写" />
-    <option name="LAST_COMMIT_MESSAGE" value="聊天小程序编写" />
+    <MESSAGE value="黏包拆包的实现" />
+    <option name="LAST_COMMIT_MESSAGE" value="黏包拆包的实现" />
   </component>
   <component name="WindowStateProjectService">
     <state x="249" y="0" key="#Project_Structure" timestamp="1639376537597">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="249" y="0" key="#Project_Structure/0.0.1536.824@0.0.1536.824" timestamp="1639376537597" />
-    <state x="223" y="67" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1640654317178">
+    <state x="223" y="67" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1640661099792">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="223" y="67" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824@0.0.1536.824" timestamp="1640654317178" />
-    <state x="574" y="128" key="#com.intellij.ide.util.MemberChooser" timestamp="1640162307413">
+    <state x="223" y="67" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824@0.0.1536.824" timestamp="1640661099792" />
+    <state x="574" y="128" key="#com.intellij.ide.util.MemberChooser" timestamp="1640662555235">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="574" y="128" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1640162307413" />
-    <state x="524" y="114" key="#xdebugger.evaluate" timestamp="1640162232505">
+    <state x="574" y="128" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1640662555235" />
+    <state x="524" y="114" key="#xdebugger.evaluate" timestamp="1640669830580">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="524" y="114" key="#xdebugger.evaluate/0.0.1536.824@0.0.1536.824" timestamp="1640162232505" />
+    <state x="524" y="114" key="#xdebugger.evaluate/0.0.1536.824@0.0.1536.824" timestamp="1640669830580" />
     <state width="753" height="456" key="DebuggerActiveHint" timestamp="1640162260829">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -262,38 +296,38 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="549" y="166" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1639376689945" />
-    <state width="1493" height="210" key="GridCell.Tab.0.bottom" timestamp="1640655761427">
+    <state width="1493" height="261" key="GridCell.Tab.0.bottom" timestamp="1640669775030">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="210" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1640655761427" />
-    <state width="1493" height="210" key="GridCell.Tab.0.center" timestamp="1640655761427">
+    <state width="1493" height="261" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1640669775030" />
+    <state width="1493" height="261" key="GridCell.Tab.0.center" timestamp="1640669775029">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="210" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1640655761427" />
-    <state width="1493" height="210" key="GridCell.Tab.0.left" timestamp="1640655761426">
+    <state width="1493" height="261" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1640669775029" />
+    <state width="1493" height="261" key="GridCell.Tab.0.left" timestamp="1640669775029">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="210" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1640655761426" />
-    <state width="1493" height="210" key="GridCell.Tab.0.right" timestamp="1640655761427">
+    <state width="1493" height="261" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1640669775029" />
+    <state width="1493" height="261" key="GridCell.Tab.0.right" timestamp="1640669775030">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="210" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1640655761427" />
-    <state width="1493" height="261" key="GridCell.Tab.1.bottom" timestamp="1640583888627">
+    <state width="1493" height="261" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1640669775030" />
+    <state width="1493" height="261" key="GridCell.Tab.1.bottom" timestamp="1640669775031">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="261" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1640583888627" />
-    <state width="1493" height="261" key="GridCell.Tab.1.center" timestamp="1640583888627">
+    <state width="1493" height="261" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1640669775031" />
+    <state width="1493" height="261" key="GridCell.Tab.1.center" timestamp="1640669775030">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="261" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1640583888627" />
-    <state width="1493" height="261" key="GridCell.Tab.1.left" timestamp="1640583888626">
+    <state width="1493" height="261" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1640669775030" />
+    <state width="1493" height="261" key="GridCell.Tab.1.left" timestamp="1640669775030">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="261" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1640583888626" />
-    <state width="1493" height="261" key="GridCell.Tab.1.right" timestamp="1640583888627">
+    <state width="1493" height="261" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1640669775030" />
+    <state width="1493" height="261" key="GridCell.Tab.1.right" timestamp="1640669775031">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="261" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1640583888627" />
+    <state width="1493" height="261" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1640669775031" />
     <state x="299" y="67" key="Maven.ArtifactSearchDialog" timestamp="1639723501797">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -306,46 +340,62 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="270" y="0" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1640084041104" />
-    <state x="361" y="131" key="Vcs.Push.Dialog.v2" timestamp="1640166957519">
+    <state x="361" y="131" key="Vcs.Push.Dialog.v2" timestamp="1640656429750">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="361" y="131" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1640166957519" />
+    <state x="361" y="131" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1640656429750" />
+    <state x="313" y="141" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1640663037289">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="313" y="141" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/0.0.1536.824@0.0.1536.824" timestamp="1640663037289" />
+    <state x="467" y="146" width="602" height="532" key="find.popup" timestamp="1640662932476">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="467" y="146" width="602" height="532" key="find.popup/0.0.1536.824@0.0.1536.824" timestamp="1640662932476" />
     <state x="570" y="318" key="git4idea.remote.GitConfigureRemotesDialog" timestamp="1639376232509">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="570" y="318" key="git4idea.remote.GitConfigureRemotesDialog/0.0.1536.824@0.0.1536.824" timestamp="1639376232509" />
-    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1640082787809">
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1640660382028">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1640082787809" />
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1640660382028" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/chat/ChatClient.java</url>
-          <line>55</line>
-          <option name="timeStamp" value="1" />
+          <url>file://$PROJECT_DIR$/src/main/java/SendByMySelf/MyMessageEncoder.java</url>
+          <line>9</line>
+          <option name="timeStamp" value="20" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/chat/ChatClient.java</url>
-          <line>56</line>
-          <option name="timeStamp" value="2" />
+          <url>file://$PROJECT_DIR$/src/main/java/SendByMySelf/MyMessageDecoder.java</url>
+          <line>18</line>
+          <option name="timeStamp" value="21" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/chat/ChatServerHandler.java</url>
-          <line>89</line>
-          <option name="timeStamp" value="4" />
+          <url>file://$PROJECT_DIR$/src/main/java/SendByMySelf/MyServerHandler.java</url>
+          <line>13</line>
+          <option name="timeStamp" value="22" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/chat/ChatClientHandler.java</url>
-          <line>15</line>
-          <option name="timeStamp" value="6" />
+          <url>file://$PROJECT_DIR$/src/main/java/SendByMySelf/MyClientHandler.java</url>
+          <line>12</line>
+          <option name="timeStamp" value="23" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/SendByMySelf/MyClient.java</url>
+          <line>23</line>
+          <option name="timeStamp" value="24" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/netty1$MyClient.ic" NAME="MyClient Coverage Results" MODIFIED="1640661294521" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>SendByMySelf.*</FILTER>
+    </SUITE>
     <SUITE FILE_PATH="coverage/netty1$ChatClient.ic" NAME="ChatClient Coverage Results" MODIFIED="1640084237198" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>chat.*</FILTER>
     </SUITE>
