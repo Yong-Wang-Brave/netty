@@ -10,7 +10,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="762d6308-1a62-4f0e-afdc-2606e641f1c0" name="Default Changelist" comment="自定义黏包拆包的实现">
+    <list default="true" id="762d6308-1a62-4f0e-afdc-2606e641f1c0" name="Default Changelist" comment="注释补充">
       <change afterPath="$PROJECT_DIR$/../RedisSecKill/.idea/.gitignore" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../RedisSecKill/.idea/compiler.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../RedisSecKill/.idea/encodings.xml" afterDir="false" />
@@ -28,7 +28,9 @@
       <change afterPath="$PROJECT_DIR$/../log4jBugDemo/src/main/java/com/example/demo/controller/TestLogController.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../log4jBugDemo/src/main/resources/log4j.properties" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../mvcdemo1/mvcdemo1.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/SendByMySelf/返回结果解析.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/HeatBeat/HeartBeatClient.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/HeatBeat/HeartBeatServer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/HeatBeat/HeartBeatServerHandler.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../redisSecKillByWY/src/main/java/com/example/demo/Controller/jedisCom1.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../security-spring-security/security-spring-security.iml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../security-spring-security/src/main/java/com/pbteach/security/springboot/config/ApplicationConfig.java" afterDir="false" />
@@ -51,8 +53,6 @@
       <change afterPath="$PROJECT_DIR$/../springcloud-alibaba/springcloud-alibaba.iml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../testMybatis/testMybatis.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/SendByMySelf/MyClientHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/SendByMySelf/MyClientHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/SendByMySelf/MyMessageDecoder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/SendByMySelf/MyMessageDecoder.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -106,17 +106,20 @@
     <property name="settings.editor.selected.configurable" value="reference.projectsettings.compiler.javacompiler" />
   </component>
   <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="HeatBeat" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\original\netty1\src\main\java\chat" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.MyClient">
-    <configuration name="ChatClient" type="Application" factoryName="Application" singleton="false" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="chat.ChatClient" />
+  <component name="RunManager" selected="Application.HeartBeatClient">
+    <configuration name="HeartBeatClient" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="HeatBeat.HeartBeatClient" />
       <module name="netty1" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="chat.*" />
+          <option name="PATTERN" value="HeatBeat.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -124,12 +127,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ChatServer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="chat.ChatServer" />
+    <configuration name="HeartBeatServer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="HeatBeat.HeartBeatServer" />
       <module name="netty1" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="chat.*" />
+          <option name="PATTERN" value="HeatBeat.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -177,19 +180,19 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="Application.ChatClient" />
-      <item itemvalue="Application.ChatServer" />
       <item itemvalue="Application.NettyClient" />
       <item itemvalue="Application.MyServer" />
       <item itemvalue="Application.MyClient" />
+      <item itemvalue="Application.HeartBeatServer" />
+      <item itemvalue="Application.HeartBeatClient" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.HeartBeatClient" />
+        <item itemvalue="Application.HeartBeatServer" />
         <item itemvalue="Application.MyClient" />
         <item itemvalue="Application.MyServer" />
         <item itemvalue="Application.NettyClient" />
-        <item itemvalue="Application.ChatClient" />
-        <item itemvalue="Application.ChatServer" />
       </list>
     </recent_temporary>
   </component>
@@ -206,7 +209,8 @@
       <workItem from="1639376151358" duration="6904000" />
       <workItem from="1639996100162" duration="16477000" />
       <workItem from="1640654143574" duration="11544000" />
-      <workItem from="1640741018357" duration="2316000" />
+      <workItem from="1640741018357" duration="2642000" />
+      <workItem from="1640744134396" duration="1900000" />
     </task>
     <task id="LOCAL-00001" summary="提交">
       <created>1639378502395</created>
@@ -250,7 +254,14 @@
       <option name="project" value="LOCAL" />
       <updated>1640671311739</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="注释补充">
+      <created>1640744051888</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1640744051888</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -273,7 +284,8 @@
     <MESSAGE value="聊天小程序编写" />
     <MESSAGE value="黏包拆包的实现" />
     <MESSAGE value="自定义黏包拆包的实现" />
-    <option name="LAST_COMMIT_MESSAGE" value="自定义黏包拆包的实现" />
+    <MESSAGE value="注释补充" />
+    <option name="LAST_COMMIT_MESSAGE" value="注释补充" />
   </component>
   <component name="WindowStateProjectService">
     <state x="249" y="0" key="#Project_Structure" timestamp="1639376537597">
@@ -300,22 +312,22 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="549" y="166" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1639376689945" />
-    <state width="1493" height="210" key="GridCell.Tab.0.bottom" timestamp="1640742420470">
+    <state width="1493" height="210" key="GridCell.Tab.0.bottom" timestamp="1640745250783">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="210" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1640742420470" />
-    <state width="1493" height="210" key="GridCell.Tab.0.center" timestamp="1640742420470">
+    <state width="1493" height="210" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1640745250783" />
+    <state width="1493" height="210" key="GridCell.Tab.0.center" timestamp="1640745250783">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="210" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1640742420470" />
-    <state width="1493" height="210" key="GridCell.Tab.0.left" timestamp="1640742420470">
+    <state width="1493" height="210" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1640745250783" />
+    <state width="1493" height="210" key="GridCell.Tab.0.left" timestamp="1640745250782">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="210" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1640742420470" />
-    <state width="1493" height="210" key="GridCell.Tab.0.right" timestamp="1640742420470">
+    <state width="1493" height="210" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1640745250782" />
+    <state width="1493" height="210" key="GridCell.Tab.0.right" timestamp="1640745250783">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="210" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1640742420470" />
+    <state width="1493" height="210" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1640745250783" />
     <state width="1493" height="261" key="GridCell.Tab.1.bottom" timestamp="1640671875718">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -344,10 +356,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="270" y="0" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1640084041104" />
-    <state x="361" y="131" key="Vcs.Push.Dialog.v2" timestamp="1640671313397">
+    <state x="361" y="131" key="Vcs.Push.Dialog.v2" timestamp="1640744056371">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="361" y="131" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1640671313397" />
+    <state x="361" y="131" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1640744056371" />
     <state x="313" y="141" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1640663037289">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
