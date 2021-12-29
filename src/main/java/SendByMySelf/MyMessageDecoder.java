@@ -17,6 +17,7 @@ public class MyMessageDecoder extends ByteToMessageDecoder
         System.out.println("MyMessageDecoder decode 被调用");
         //需要将得到二进制字节码-》MyMessafeProtocol数据包（对象）
         System.out.println(in);
+        //长度的单位是int，占用4个字节，客户端会把长度 先发过来
         if ((in.readableBytes()>=4)) {
             if ((length==0)) {
               length=  in.readInt();

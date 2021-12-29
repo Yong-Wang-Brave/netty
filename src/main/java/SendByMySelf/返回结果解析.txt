@@ -1,0 +1,37 @@
+D:\ruanjian\java\bin\java.exe "-javaagent:C:\Program Files\JetBrains\IntelliJ IDEA 2020.1\lib\idea_rt.jar=49481:C:\Program Files\JetBrains\IntelliJ IDEA 2020.1\bin" -Dfile.encoding=UTF-8 -classpath D:\ruanjian\java\jre\lib\charsets.jar;D:\ruanjian\java\jre\lib\deploy.jar;D:\ruanjian\java\jre\lib\ext\access-bridge-64.jar;D:\ruanjian\java\jre\lib\ext\cldrdata.jar;D:\ruanjian\java\jre\lib\ext\dnsns.jar;D:\ruanjian\java\jre\lib\ext\jaccess.jar;D:\ruanjian\java\jre\lib\ext\jfxrt.jar;D:\ruanjian\java\jre\lib\ext\localedata.jar;D:\ruanjian\java\jre\lib\ext\nashorn.jar;D:\ruanjian\java\jre\lib\ext\sunec.jar;D:\ruanjian\java\jre\lib\ext\sunjce_provider.jar;D:\ruanjian\java\jre\lib\ext\sunmscapi.jar;D:\ruanjian\java\jre\lib\ext\sunpkcs11.jar;D:\ruanjian\java\jre\lib\ext\zipfs.jar;D:\ruanjian\java\jre\lib\javaws.jar;D:\ruanjian\java\jre\lib\jce.jar;D:\ruanjian\java\jre\lib\jfr.jar;D:\ruanjian\java\jre\lib\jfxswt.jar;D:\ruanjian\java\jre\lib\jsse.jar;D:\ruanjian\java\jre\lib\management-agent.jar;D:\ruanjian\java\jre\lib\plugin.jar;D:\ruanjian\java\jre\lib\resources.jar;D:\ruanjian\java\jre\lib\rt.jar;D:\original\netty1\target\classes;D:\ruanjian\apache-maven-3.6.3-bin\mavenresposity\io\netty\netty-all\4.1.35.Final\netty-all-4.1.35.Final.jar;D:\ruanjian\apache-maven-3.6.3-bin\mavenresposity\org\springframework\boot\spring-boot-starter-log4j2\2.6.1\spring-boot-starter-log4j2-2.6.1.jar;D:\ruanjian\apache-maven-3.6.3-bin\mavenresposity\org\apache\logging\log4j\log4j-slf4j-impl\2.14.1\log4j-slf4j-impl-2.14.1.jar;D:\ruanjian\apache-maven-3.6.3-bin\mavenresposity\org\slf4j\slf4j-api\1.7.25\slf4j-api-1.7.25.jar;D:\ruanjian\apache-maven-3.6.3-bin\mavenresposity\org\apache\logging\log4j\log4j-api\2.14.1\log4j-api-2.14.1.jar;D:\ruanjian\apache-maven-3.6.3-bin\mavenresposity\org\apache\logging\log4j\log4j-core\2.14.1\log4j-core-2.14.1.jar;D:\ruanjian\apache-maven-3.6.3-bin\mavenresposity\org\apache\logging\log4j\log4j-jul\2.14.1\log4j-jul-2.14.1.jar;D:\ruanjian\apache-maven-3.6.3-bin\mavenresposity\org\slf4j\jul-to-slf4j\1.7.32\jul-to-slf4j-1.7.32.jar SendByMySelf.MyServer
+nettty server start--
+
+MyMessageDecoder decode 被调用
+PooledUnsafeDirectByteBuf(ridx: 0, widx: 140, cap: 1024)  //bytBuff满了 会有扩容机制
+====服务端收到消息如下
+长度24
+内容你好，我是张三。// 8个汉字+ 4个int占用空间 =28
+服务端结果搜的消息包数量=1
+
+MyMessageDecoder decode 被调用
+PooledUnsafeDirectByteBuf(ridx: 28, widx: 140, cap: 1024)
+====服务端收到消息如下
+长度24
+内容你好，我是张三。
+服务端结果搜的消息包数量=2
+
+MyMessageDecoder decode 被调用
+PooledUnsafeDirectByteBuf(ridx: 56, widx: 140, cap: 1024)
+====服务端收到消息如下
+长度24
+内容你好，我是张三。
+服务端结果搜的消息包数量=3
+
+MyMessageDecoder decode 被调用
+PooledUnsafeDirectByteBuf(ridx: 84, widx: 140, cap: 1024)
+====服务端收到消息如下
+长度24
+内容你好，我是张三。
+服务端结果搜的消息包数量=4
+
+MyMessageDecoder decode 被调用      //112+28 刚好等于140
+PooledUnsafeDirectByteBuf(ridx: 112, widx: 140, cap: 1024)
+====服务端收到消息如下
+长度24
+内容你好，我是张三。
+服务端结果搜的消息包数量=5
