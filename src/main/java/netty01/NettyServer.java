@@ -16,6 +16,8 @@ public class NettyServer {
         //创建两个线程组bossGroup和workerGroup, 含有的子线程NioEventLoop的个数默认为cpu核数的两倍
         // bossGroup只是处理连接请求 ,真正的和客户端业务处理，会交给workerGroup完成
         EventLoopGroup bossGroup = new NioEventLoopGroup(1);
+        //        int max = Math.max(1, SystemPropertyUtil.getInt("io.netty.eventLoopThreads", NettyRuntime.availableProcessors() * 2));
+        //不写的话 是逻辑核数的2倍
         EventLoopGroup workerGroup = new NioEventLoopGroup();
         try {
             //创建服务器端的启动对象
